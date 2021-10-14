@@ -1,1 +1,2 @@
 # Bioinformatika-laboratoriniai
+Domantas Kemešis
