@@ -80,7 +80,6 @@ for file in file_list:
 
 # writing results
 f = open("codonFrequency.txt", "w")
-f.write("codon \n")
 for temp, file in zip(codon_frequency, file_list):
     f.write(file + "\n")
     for (codon, freq) in temp:
@@ -89,7 +88,6 @@ for temp, file in zip(codon_frequency, file_list):
 f.close()
 
 f = open("dicodonFrequency.txt", "w")
-f.write("dicodon  \n")
 for temp, file in zip(dicodon_frequency, file_list):
     f.write(file + "\n")
     for (dicodon, freq) in temp:
@@ -101,9 +99,8 @@ r = open("codonDistanceMatrix.txt", "w")
 for row, name in zip(codon_frequency, file_list):
     r.write("%s " % name)
     list = []
-    for current in row:
-        for row2 in codon_frequency:
-            list.append(compare(row, row2))
+    for row2 in codon_frequency:
+        list.append(compare(row, row2))
     for num in list:
         r.write("%1.4f " % num)
     r.write("\n")
@@ -113,9 +110,8 @@ r = open("dicodonDistanceMatrix.txt", "w")
 for row, name in zip(dicodon_frequency, file_list):
     r.write("%s " % name)
     list = []
-    for current in row:
-        for row2 in dicodon_frequency:
-            list.append(compare(row, row2))
+    for row2 in dicodon_frequency:
+        list.append(compare(row, row2))
     for num in list:
         r.write("%1.4f " % num)
     r.write("\n")
